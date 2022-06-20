@@ -1,0 +1,76 @@
+#form{
+
+  font-family:'Lato';
+  font-size:3.5rem;
+  color:#f0f8ff;
+  background:linear-gradient(var(--navy-blue1a), var(--navy-blue2a)),
+  url('../public/money-falling.jpg');
+}
+#form :is(div){
+  padding: 5% 0;
+  border:1px solid;
+}
+.text-field-div input{
+    padding:20px 0px;
+    font-size:33px;
+    width:50%;
+    border-radius:10px;
+    background:transparent;
+    border:2px solid var(--green1);
+    color:#808080;
+}
+.text-field-div input:focus{
+  outline:3px solid var(--green1);
+  color:#e0e8ef;
+}
+.radio-field-div{
+  display:flex;
+  flex-direction:column;
+}
+.radio-field-div input{
+  margin:2% 20px;
+  font-size:20px;
+  transform: scale(2);
+}
+#play-button{
+    background:radial-gradient(var(--navy-blue1) ,var(--navy-blue2));
+    color:aliceblue;
+    
+    letter-spacing: 1px;
+    position:absolute;
+    left:50%;
+    top:70%;
+    transform: translate(-70%,-50%);
+    padding:20px;
+  
+    transition:0.3s;
+    animation-name: bounce;
+    animation-duration:1.5s;
+    animation-iteration-count:infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate-reverse;
+  
+  }
+  #start-button:hover{
+    padding: 25px;
+    transition:0.3s;
+    letter-spacing: 2px;
+    font-size:17px;
+    }
+  
+  @keyframes bounce{
+    0%{
+      top:90%;
+      transform:translate(-70%,-50%);
+    }
+    50%{
+      top:89%;
+      transform:translateX(-69%)
+    }
+    100%{
+      top:90%;
+      transform:translate(-70%,-50%);
+    
+    }
+  }
+  
