@@ -1,0 +1,7 @@
+.main{
+    background:radial   -gradient(var(--navy-blue1a), var(--navy-blue2a)),
+    url('../public/money-falling.jpg');
+}
+.next-button{
+    padding:40px;
+}
