@@ -1,7 +1,216 @@
 .main{
-    background:radial   -gradient(var(--navy-blue1a), var(--navy-blue2a)),
+    background:radial-gradient(var(--navy-blue1a), var(--navy-blue2a)),
     url('../public/money-falling.jpg');
+    height:100vh;
 }
 .next-button{
     padding:40px;
 }
+
+.header {
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow:hidden;
+    /* box-shadow:1px 1px 10px; */
+    width:100%;
+}
+
+.box {
+	display: flex;
+    align-items:center
+}
+
+.box .inner {
+	width: 800px;
+	height: 100px;
+	font-size: 4em;
+	font-family: sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+	background-color: rgba(0,0,200,0.1);
+    color: antiquewhite;
+	transform-origin: right;
+	transform: perspective(250px) rotateY(-10deg);
+}
+
+.box .inner:last-child {
+    
+	background-color: rgba(0,0,250,0.2);
+	color: darkred;
+	transform-origin: left;
+	transform: perspective(250px) rotateY(10deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 5s linear infinite;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+
+.box .inner:first-child span {
+	animation-delay: 2.5s;
+	left: -100%;
+}
+
+@keyframes marquee {
+	from {
+		left: -100%;
+	}
+
+	to {
+		left: 100%;
+	}
+}
+/* ################################################ */
+.sudden-death-div{
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+/* ################################################ */
+
+/* //QUIZ BLOCK STYLES */
+.quiz-block{
+    border:1px solid red;
+    transition: 1s;
+}
+.question-div{
+    border:1px solid blue;
+    padding:20px;
+    color:antiquewhite;
+    font-size:22px;
+    transition:1s
+}
+button.big-button {
+    padding: 1em 2em;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  .possible-answers-div .big-button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  
+  .possible-answers-div .big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+    cursor:pointer;
+  }
+  
+  .possible-answers-div .big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+  }
+  
+  .possible-answers-div .big-button:active {
+    transform: translate(0em, 0.75em);
+  }
+  
+  .big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+  
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+  }
+  .money-div{
+    border:1px solid yellow;
+    text-align:center;
+    color:antiquewhite;
+    font-size:22px;
+  }
+  /* ################PROGRESS COMPONENTS################# */
+  .progress-div{
+    display:flex;
+    justify-content:center;
+  }
+  .progress-container{
+    width:80%
+  }
+
+  .progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 30px;
+}
+.progress{
+    height: 10px;
+    background: #000;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 40px;
+    overflow: visible;
+    position: relative;
+}
+.progress .progress-bar{
+    background: #fff;
+    border-radius: 0;
+    position: relative;
+    -webkit-animation: animate-positive 2s;
+    animation: animate-positive 2s;
+    transition:1s
+}
+.progress .progress-bar:before{
+    content: "";
+    width: 100%;
+    border-top: 10px double #f95738;
+    border-right: 25px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress .progress-value{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    position: absolute;
+    top: -32px;
+    right: -5px;
+}
+.progress.yellow .progress-bar:before{ border-top-color: #ecb82d; }
+.progress.green .progress-bar:before{ border-top-color: #65c168; }
+.progress.blue .progress-bar:before{ border-top-color: #165692; }
+@-webkit-keyframes animate-positive{
+    0% { width: 0; }
+}
+@keyframes animate-positive{
+    0% { width: 0; }
+}
+  /* ################PROGRESS COMPONENTS################# */
+  

@@ -1,15 +1,19 @@
 const mongoose = require('mongoose');
 import connect from './index'
 import User from './models/user'
+import {useRouter} from 'next/router'
 
 export default async function handler (req,res){
    
     switch (req.method) {
         case 'GET':
+            const router = useRouter()
+            const {pid} = router.query
+            console.log('PID:',pid)
             console.log('get request')
             const users = await User.find()
             console.log(users)
-            res.status(200).json({message:users})
+            res.status(200).json({users})
             break;
             
         case 'POST':
