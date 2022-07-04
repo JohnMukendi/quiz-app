@@ -2,15 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/introPage.module.css'
 import FormFieldPage from './formField'
+import { useState, useRef, useEffect } from 'react' 
 
 import { Button,Typography } from '@mui/material'
 import Link from 'next/link'
 
 export default function IntroPage() {
+  
+  
   return (
     <main id={styles.main}>
       <div id={styles.heading}>
         <h1> The Love of Money is the root of all Evil!!!</h1> 
+        <h2>{timer}</h2>
+        <button onClick={onClickResetBtn()}></button>
       </div>
       
       <video autoPlay muted loop id={styles['background-video']}>
@@ -26,7 +31,6 @@ export default function IntroPage() {
           Start Quizzin'
         </Button>
       </Link>
-      
       
     </main>
     

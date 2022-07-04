@@ -9,22 +9,22 @@ import Modal from '@mui/material/Modal';
 
   
 const InstrPopUp = () => {
-  const {open,setOpen,userName,difficulty,category} = useContext(userContext);
+  const {open,setOpen,userName,difficulty,category,mode} = useContext(userContext);
     
-    var mode = {}
+    
     
     switch(difficulty){
       case 'easy':
-        mode['atPrice'] = 100
-        mode['sdPrice'] = 200
+        mode['atPrice'] = 20
+        mode['sdPrice'] = 100
         break;
       case 'medium':
-        mode['atPrice'] = 1000
-        mode['sdPrice'] = 2000
+        mode['atPrice'] = 200
+        mode['sdPrice'] = 1000
         break;
       case 'hard':
-        mode['atPrice'] = 10000
-        mode['sdPrice'] = 20000
+        mode['atPrice'] = 2000
+        mode['sdPrice'] = 10000
         break;
     }
     const handleClose = () => {
