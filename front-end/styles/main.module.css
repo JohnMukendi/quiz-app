@@ -2,19 +2,24 @@
     background:radial-gradient(var(--navy-blue1a), var(--navy-blue2a)),
     url('../public/money-falling.jpg');
     height:100vh;
-}
-.next-button{
-    padding:40px;
+    /* display:flex;
+    flex-direction: column;
+    justify-content:center;
+   */
+   color:antiquewhite;
+    
 }
 
+
 .header {
+  position:relative;
 	height: 20%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow:hidden;
     /* box-shadow:1px 1px 10px; */
-    width:100%;
+  width:100%;
 }
 
 .box {
@@ -42,7 +47,7 @@
 .box .inner:last-child {
     
 	background-color: rgba(0,0,250,0.2);
-	color: darkred;
+	color: dark;
 	transform-origin: left;
 	transform: perspective(250px) rotateY(10deg);
 }
@@ -73,6 +78,10 @@
 	animation-delay: 2.5s;
 	left: -100%;
 }
+.next-button{
+  position:absolute;
+  padding:40px;
+}
 
 @keyframes marquee {
 	from {
@@ -86,14 +95,15 @@
 /* ################################################ */
 .sudden-death-div{
     display:flex;
+    flex-direction:column;
     justify-content:center;
     padding:40px;
+    width:100%
 }
 /* ################################################ */
 
 /* //QUIZ BLOCK STYLES */
 .quiz-block{
-    border:1px solid red;
     transition: 1s;
 }
 .question-div{
@@ -143,15 +153,40 @@ button.big-button {
   
   .big-button:active::before {
     transform: translate3d(0, 0, -1em);
-  
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
   }
   .money-div{
-    border:1px solid yellow;
+    
     text-align:center;
     color:antiquewhite;
     font-size:22px;
   }
+  .start-button{
+    background:radial-gradient(var(--navy-blue1) ,var(--navy-blue2));
+    color:aliceblue;
+    
+    letter-spacing: 1px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    padding:20px;
+  
+    transition:0.3s;
+    animation-name: bounce;
+    animation-duration:1.5s;
+    animation-iteration-count:infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate-reverse;
+  
+  }
+  .start-button:hover{
+    padding: 25px;
+    transition:0.3s;
+    letter-spacing: 2px;
+    font-size:17px;
+    }
+  
   /* ################PROGRESS COMPONENTS################# */
   .progress-div{
     display:flex;
@@ -164,17 +199,17 @@ button.big-button {
   .progress-title{
     font-size: 18px;
     font-weight: 700;
-    color: #000;
+    color: whitesmoke;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 0 0 30px;
+    margin: 0  30px;
 }
 .progress{
     height: 10px;
     background: #000;
     border-radius: 0;
     box-shadow: none;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     overflow: visible;
     position: relative;
 }
@@ -198,7 +233,7 @@ button.big-button {
 .progress .progress-value{
     font-size: 18px;
     font-weight: 700;
-    color: #000;
+    color: whitesmoke;
     position: absolute;
     top: -32px;
     right: -5px;
