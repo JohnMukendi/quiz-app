@@ -13,9 +13,9 @@ export default function IntroPage() {
   return (
     <main id={styles.main}>
       <div id={styles.heading}>
-        <h1> The Love of Money is the root of all Evil!!!</h1> 
-        <h2>{timer}</h2>
-        <button onClick={onClickResetBtn()}></button>
+        <h1 className={styles['logo-1']}> The Love of Money is the root of all Evil!!!</h1> 
+        
+        
       </div>
       
       <video autoPlay muted loop id={styles['background-video']}>

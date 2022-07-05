@@ -11,9 +11,9 @@ const Progress = () => {
         <div className={styles["progress-container"]}>
             <div className={styles.row}>
                 <div className={styles["col-md-6"]}>
-                    <h3 className={styles["progress-title"]}>HTML5</h3>
+                    <h3 className={styles["progress-title"]} styles={{pading:'10px',color:'white'}}></h3>
                     <div className={styles["progress"]}>
-                        <div className={styles["progress-bar"]} style={{width:percentage+'%'}}>
+                        <div className={styles["progress-bar"]} style={{width:percentage+'%',backgroundColor:'white'}}>
                             <div className={styles["progress-value"]}>{percentage}%</div>
                         </div>
                     </div>

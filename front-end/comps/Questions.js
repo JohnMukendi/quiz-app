@@ -1,7 +1,7 @@
-
+import styles from '../styles/questions.module.css'
 import { useState, useRef, useEffect } from 'react' 
 
-export default function Questions(props){
+export default function Questions({data,nextQuest}){
     const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -115,27 +115,29 @@ export default function Questions(props){
   }
 
 	return (
-		<div className='app'>
+		<div className={styles.body}>
+			<div className={styles['app']}>
 			{showScore ? (
-				<div className='score-section'>
+				<div className={styles['score-section']}>
 					You scored {score} out of {questions.length}
 				</div>
 			) : (
 				<>
-					<div className='question-section'>
+					<div className={styles['question-section']}>
                     <h2>{timer}</h2>
-						<div className='question-count'>
+						<div className={styles['question-count']}>
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
 						</div>
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
+						<div className={styles['question-text']}>{questions[currentQuestion].questionText}</div>
 					</div>
-					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+					<div className={styles['answer-section']}>
+						{data.map((answerOption) => (
+							<button className={styles['button']} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
 				</>
 			)}
+		</div>
 		</div>
 	);
 }

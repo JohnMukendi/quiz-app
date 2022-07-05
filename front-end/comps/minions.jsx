@@ -1,9 +1,10 @@
 import Image from 'next/image'
-
-const MinionsPage = () => {
+import {useContext} from 'react'
+const MinionsPage = ({cash}) => {
     return ( 
         <>
-            <img width={80} height={80} src='minion.jpeg'/>
+            <img styles={{width:'30px'}} src='minion.jpeg'/>
+            <h1 style={{color:'black'}}>LOL!!!! You Lost R{cash}</h1>
         </>
      );
 }

@@ -8,10 +8,10 @@ const ModeHeader = (props) =>{
     return (
         <header className={styles.header}>
                 <div className={styles.box}>
-                    <div className ={styles.inner}>
+                    <div style={{color:props.color}} className ={styles.inner}>
                         <span>{props.firstText}</span>
                     </div>
-                    <div className={styles.inner}>
+                    <div style={{color:props.color}} className={styles.inner}>
                         <span>{props.firstText}</span>
                     </div>
                 </div>
